@@ -1,0 +1,18 @@
+{% extends "app/base.html"  %}
+
+{% block title %}
+Blog - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+
+<div class="alert alert-info" role="alert"><h4>Hello {{request.user.username}}! Your Current Account Balance is ${{request.user.balance}} </h4></div>
+
+<h2>{{ title }}</h2><hr>
+<form method="POST" action="" >
+    {% csrf_token %}
+    {{ form }}
+    <br>
+    <input class="btn btn-primary" type="submit" value='{{ title }}'>
+</form>
+{% endblock %}>
